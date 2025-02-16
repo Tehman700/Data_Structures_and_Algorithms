@@ -38,22 +38,49 @@ class Doubly:
         new_node.prev = temp
 
     def insert_specific(self, prev_node, data):
-        pass
 
-# class Singly:
-#     def __init__(self):
-#         self.head = None
+        # 10 20 __30___ 40
+        if (prev_node == None):
+            print("Previous cannot be None")
+            return
 
-#     def adding(self, data):
-#         first_node = Node(data)
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+        new_node.prev = prev_node
+        if(new_node.next):
+            new_node.next.prev = new_node
 
-#         if(self.head == None):
-#             self.head = first_node
-#             return
 
-#         temp = self.head
+    def display_forward(self):
+        current = self.head
 
-#         while(temp.next != None):
-#             temp = temp.next
+        while(current != None):
+            print(current.data)
+            current = current.next
 
-#         temp.next = first_node
+
+    def display_backward(self):
+        current = self.head
+
+        while(current.next):
+            current = current.next
+        while(current):
+            print(current.data)
+            current = current.prev
+
+
+
+
+dll = Doubly()
+dll.insert_end(10)
+dll.insert_end(30)
+dll.insert_end(40)
+dll.display_forward()
+print("/n/n/n")
+
+dll.insert_beg(12)
+dll.insert_end(455)
+dll.display_backward()
+
+
