@@ -160,9 +160,10 @@
 
 
 # MEDIUM QUESTION NUMBER 03
-
+import time
+import random
 class Node:
-    def __int__(self,data):
+    def __init__(self,data):
         self.data = data
         self.next =None
         self.prev =None
@@ -190,17 +191,68 @@ class Round_Robin:
 
 
     def display(self):
+        current = self.head
 
-        curr = self.head
+        while(current.next):
+            current = current.next
+        while(current):
+            print(current.data)
+            current = current.prev
 
-        while(curr != None):
-            print(curr.data)
-            curr = curr.next
 
+
+    def start_process(self):
+        random_times = [3,2,5,10,12,11,13]
+
+        current = self.head
+
+        while(current != None):
+
+            random_number  = random.choice(random_times)
+            print("Using FIFO Concept picked ",current.data," process. And is being Processed")
+            print("This Process is Taking ",random_number," Seconds to Execute")
+            time.sleep(random_number)
+
+            next_node = current.next
+
+            if(random_number> 10):
+                print("\n\n\n")
+                print("As this Process took More than 10 Seconds we will put it at end!!")
+                if current == self.head:
+                    self.head = current.next
+                    if self.head:
+                        self.head.prev = None
+                else:
+                    current.prev.next = current.next
+                    if(current.next):
+                        current.next.prev = current.prev
+
+                last = self.head
+                if last:
+                    while(last.next):
+                        last = last.next
+                    last.next = current
+                    current.prev = last
+                else:
+                    self.head = current
+                    current.prev = None
+
+                current.next = None
+
+
+            current = next_node
+
+
+
+        print("\n\n PROCESS EXECUTED")
 
 ty = Round_Robin()
 ty.adding_processes(56)
 ty.adding_processes(45)
+ty.adding_processes(34)
+ty.adding_processes(3)
 ty.display()
+print("\n\n\n\n")
+ty.start_process()
 
 
