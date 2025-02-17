@@ -66,18 +66,114 @@
 
 # MEDIUM QUESTION NUMBER 02
 
+# class Node:
+#     def __init__(self,data):
+#         self.next = None
+#         self.prev = None
+#         self.data = data
+#
+#
+# class Doubly_Linked_List:
+#     def __init__(self):
+#         self.head = None
+#
+#     def adding_at_end(self,data):
+#         latest_node = Node(data)
+#
+#         if(self.head == None):
+#             self.head = latest_node
+#             return
+#
+#         temp = self.head
+#         while(temp.next != None):
+#             temp = temp.next
+#
+#         temp.next = latest_node
+#         latest_node.prev = temp
+#
+#
+#     def display(self):
+#         temp = self.head
+#
+#         while(temp != None):
+#             print(temp.data)
+#             temp = temp.next
+#
+#
+#
+#     def sorting_the_nodes_highest_score(self):
+#
+#         if self.head is None:
+#             print("List is empty, nothing to sort.")
+#             return
+#
+#         swapped = True
+#         while swapped:
+#             swapped = False
+#             temp = self.head
+#             while temp.next:
+#                 if temp.data < temp.next.data:  # Sorting in descending order
+#                     temp.data, temp.next.data = temp.next.data, temp.data  # Swap values
+#                     swapped = True
+#                 temp = temp.next
+#
+#
+#
+#
+# dll = Doubly_Linked_List()
+# dll.adding_at_end(10)
+# dll.adding_at_end(30)
+# dll.adding_at_end(80)
+# dll.display()
+# print("\n\n\n")
+# dll.sorting_the_nodes_highest_score()
+# dll.display()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# MEDIUM QUESTION NUMBER 03
+
 class Node:
-    def __init__(self,data):
-        self.next = None
-        self.prev = None
+    def __int__(self,data):
         self.data = data
+        self.next =None
+        self.prev =None
 
 
-class Doubly_Linked_List:
+
+class Round_Robin:
     def __init__(self):
-        self.head = None
+        self.head =None
 
-    def adding_at_end(self,data):
+    def adding_processes(self,data):
         latest_node = Node(data)
 
         if(self.head == None):
@@ -92,45 +188,19 @@ class Doubly_Linked_List:
         latest_node.prev = temp
 
 
+
     def display(self):
-        temp = self.head
 
-        while(temp != None):
-            print(temp.data)
-            temp = temp.next
+        curr = self.head
 
-
-
-    def sorting_the_nodes_highest_score(self):
-
-        if self.head is None:
-            print("List is empty, nothing to sort.")
-            return
-
-        swapped = True
-        while swapped:
-            swapped = False
-            temp = self.head
-            while temp.next:
-                if temp.data < temp.next.data:  # Sorting in descending order
-                    temp.data, temp.next.data = temp.next.data, temp.data  # Swap values
-                    swapped = True
-                temp = temp.next
+        while(curr != None):
+            print(curr.data)
+            curr = curr.next
 
 
+ty = Round_Robin()
+ty.adding_processes(56)
+ty.adding_processes(45)
+ty.display()
 
-
-
-
-
-
-
-
-
-dll = Doubly_Linked_List()
-dll.adding_at_end(10)
-dll.adding_at_end(30)
-dll.adding_at_end(80)
-dll.sorting_the_nodes_highest_score()
-dll.display()
 
