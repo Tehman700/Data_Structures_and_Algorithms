@@ -47,26 +47,59 @@ from colorsys import rgb_to_hls
 
 # 26. Remove Duplicates from Sorted Array
 
-nums = [1,1,2]
+# nums = [1,1,2]
+#
+# left = 0
+# right = 1
+#
+# while(right < len(nums)):
+#
+#
+#     if(nums[left] == nums[right]):
+#         nums.pop(right)
+#
+#     else:
+#         left+=1
+#         right+=1
+#
+# print(len(nums))
+
+
+
+
+
+
+
+
+
+
+# 80. Remove Duplicates From Sorted Array II
+
+
+nums = [0,0,1,1,1,1,2,3,3]
 
 left = 0
 right = 1
+r = False
 
 while(right < len(nums)):
 
+    if(r==False):
+        if(nums[left] == nums[right]):
+            r = True
 
-    if(nums[left] == nums[right]):
-        nums.pop(right)
-
-    else:
         left+=1
         right+=1
 
+
+
+    if r ==True:
+        while(right<len(nums) and nums[left] == nums[right]):
+            nums.pop(right)
+        left+=1
+        right+=1
+        r=False
 print(len(nums))
-
-
-
-
 
 
 
