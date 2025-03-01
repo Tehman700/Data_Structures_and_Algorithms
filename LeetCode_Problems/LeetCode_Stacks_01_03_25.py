@@ -154,3 +154,94 @@ from colorsys import rgb_to_hls
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 84. Largest Rectangle in Histogram
+
+# lst =[2,3]
+# ty = []
+#
+#
+# for i in range(len(lst)):
+#     count = 0
+#     mains = lst[i]
+#     left = lst[:i] if i > 0 else []
+#     right = lst[i + 1:] if i < len(lst) - 1 else []
+#
+#     print(f"Iteration {i + 1}:")
+#     left.reverse()
+#     print(f"mains is {mains}, left is {left}, right is {right}")
+#     print()
+#     if len(left) != 0 and len(right) != 0:
+#         for k in right:
+#             if k >= mains:
+#                 count+=1
+#             elif k< mains:
+#                 break
+#
+#
+#         for l in left:
+#             if l >= mains:
+#                 count+=1
+#             elif l < mains:
+#                 break
+#
+#         ty.append((count+1) * mains)  # Append only once after counting both
+#
+#
+#     if len(right) > 0 and len(left) == 0:
+#         for j in right:
+#             if j == mains:
+#                 count+=1
+#             if j > mains:
+#                 count+=1
+#
+#             count+=1
+#         ty.append(count*mains)
+#
+#     if len(left) > 0  and len(right) == 0:
+#         for t in left:
+#             if t ==  mains:
+#                 count+=1
+#             if t > mains:
+#                 count+=1
+#
+#             count+=1
+#
+#         ty.append(count*mains)
+#
+# print(ty)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
