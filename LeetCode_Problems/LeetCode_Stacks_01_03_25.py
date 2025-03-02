@@ -241,6 +241,65 @@ from colorsys import rgb_to_hls
 
 
 
+import re
+
+# 8. String to Integer (atoi)
+s =  "0+1"
+s = s.lstrip()# Preserve the sign while stripping leading zeros
+if s.startswith(("+", "-")):
+    sign = s[0]  # Store the sign
+    s = sign + s[1:].lstrip("0")  # Strip leading zeros but keep the sign
+else:
+    s = s.lstrip("0")
+
+# Extract digits while preserving the sign
+match = re.match(r'[-+]?\d+', s)  # Match optional sign followed by digits
+filtered = int(match.group()) if match else 0
+
+print(filtered)  # Output: -42
+
+
+# if s.startswith("+") or s.startswith(""):
+#     s = s.lstrip("+")
+#     if isinstance(s, str):
+#         s = str(s)
+#         if pow(-2,31) < filtered < (pow(2,31)-1):
+#             print(filtered)
+#
+#     s = int(s)
+#     if isinstance(s, int):  # Correct way to check if 's' is an integer
+#         if pow(-2, 31) < s < (pow(2, 31) - 1):
+#             print(s)
+#
+#     else:
+#         print(0)
+#
+#
+# elif s.startswith("-") or s.startswith(""):
+#     s = s.lstrip("-")
+#     if isinstance(s, str):
+#         s = str(s)
+#         match = re.match(r'\d+', s)
+#         filtered = int(match.group()) if match else 0
+#         if pow(-2,31) < filtered < (pow(2,31)-1):
+#             print(filtered)
+#
+#     s = int(s)
+#     if isinstance(s, int):  # Correct way to check if 's' is an integer
+#         if pow(-2, 31) < s < (pow(2, 31) - 1):
+#             print(s)
+#
+#     else:
+#         print(0)
+
+
+
+
+
+
+
+
+
 
 
 
